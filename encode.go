@@ -32,7 +32,7 @@ func (e *Encoder) Encode(b *Block) error {
 
 func (e *Encoder) writeIndent() error {
 	for i := 0; i < e.indent; i++ {
-		_, err := fmt.Fprint(e.w, e.indent)
+		_, err := fmt.Fprint(e.w, e.opt.Indent)
 		if err != nil {
 			return err
 		}
